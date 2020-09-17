@@ -25,6 +25,7 @@ char *palindrome(char const *str) {
   char *answer;
 
   rev = str_reverse(str);
+  
   i = 0;
   while (result && str[i]) {
     if (str[i] != rev[i]) {
@@ -45,6 +46,8 @@ char *palindrome(char const *str) {
     answer[1] = 'o';
     answer[2] = '\0';
   }
-
+  free(rev);
   return answer;
 }
+//Answer is causing a memory leak but cannot be pluged here since we need it for the solution. But rev can be freed here since it is created here and not used
+//outside of here;
