@@ -1,13 +1,18 @@
 #include <gtest/gtest.h>
-
 #include "palindrome.h"
 
+//The function creates a memory leaks so eachtime it is called it makes a mess
+//the easiest way to fix this is to send the function to a variable instead of passing it through a parameter
 void is_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "Yes");
+  char *toTest = palindrome(str);
+  ASSERT_STREQ(toTest, "Yes");
+  free(toTest);
 }
 
 void not_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "No");
+  char *toTest = palindrome(str);
+  ASSERT_STREQ(toTest, "No");
+  free(toTest);
 }
 
 TEST(Palindrome, HandlesEmptyString) {
