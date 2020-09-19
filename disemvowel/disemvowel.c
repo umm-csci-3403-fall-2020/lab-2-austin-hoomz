@@ -10,8 +10,8 @@ char *disemvowel(char *str) {
 	for(int i=0;i<len;i++){
 		if(str[i]!= 'a' || str[i]!= 'e' || str[i]!= 'i' || str[i]!= 'o' || str[i]!= 'u' || str[i]!= 'A' || str[i]!= 'E' || str[i]!= 'I' || str[i]!= 'O' || str[i]!= 'U'){
 			output[j] = str[i];
-			j++;
 		}
+		j++;
 	}
 	output[j] = '\0';
 	
